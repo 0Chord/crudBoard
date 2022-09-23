@@ -14,7 +14,12 @@
             </thead>
             <tbody>
             <tr th:each="board : ${boards}">
-                <td th:text="${board.title}"></td>
+                <td th:text="${board.id}"></td>
+                <td>
+                    <a th:text="${board.title}"></a>
+                    <a th:href="@{/view/{id} (id=${board.id})}">내용 보기</a>
+                </td>
+
             </tr>
             </tbody>
         </table>
