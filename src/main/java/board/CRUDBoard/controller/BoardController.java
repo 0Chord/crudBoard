@@ -35,6 +35,7 @@ public class BoardController {
     public String list(Model model){
         List<Board> boards = boardService.findBoards();
         model.addAttribute("boards",boards);
+        System.out.println("boards.size() = " + boards.size());
         return "boards/contents";
     }
 }
