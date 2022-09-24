@@ -16,7 +16,11 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="board : "></tr>
+            <tr th:each="board : ${board}">
+                <td th:text="${board.id}"></td>
+                <td th:text="${board.title}"></td>
+                <td th:text="${board.content}"></td>
+            </tr>
             </tbody>
         </table>
     </div>

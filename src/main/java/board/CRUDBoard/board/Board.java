@@ -34,7 +34,8 @@ public class Board {
         return content;
     }
 
-    public void setContent(String contents) {
+    public void setContent(String content) {
         this.content = content;
     }
+
 }

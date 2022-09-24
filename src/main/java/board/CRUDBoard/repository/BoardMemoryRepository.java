@@ -4,7 +4,7 @@ import board.CRUDBoard.board.Board;
 
 import java.util.*;
 
-public class BoardMemoryRepository implements BoardRepository{
+public class BoardMemoryRepository implements BoardRepository {
 
     private static Map<Long, Board> store = new HashMap<>();
     private static long sequence = 0L;
@@ -12,7 +12,8 @@ public class BoardMemoryRepository implements BoardRepository{
     @Override
     public Board save(Board board) {
         board.setId(++sequence);
-        store.put(board.getId(),board);
+        store.put(board.getId(), board);
+        System.out.println(store);
         return board;
     }
 

@@ -4,6 +4,7 @@ import board.CRUDBoard.board.Board;
 import board.CRUDBoard.repository.BoardRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class BoardService {
 
@@ -20,5 +21,9 @@ public class BoardService {
 
     public List<Board> findBoards(){
         return boardRepository.findAll();
+    }
+
+    public Optional<Board> findOne(Long memberId){
+        return boardRepository.findById(memberId);
     }
 }
