@@ -24,6 +24,11 @@ public class BoardService {
         return board.getId();
     }
 
+    public Long updating(Board board, Long id) {
+        boardRepository.fetch(board, id);
+        return id;
+    }
+
     public List<Board> findBoards() {
         return boardRepository.findAll();
     }

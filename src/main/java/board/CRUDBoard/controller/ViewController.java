@@ -38,4 +38,25 @@ public class ViewController {
         }
         return "redirect:/";
     }
+
+    @GetMapping("{id}/fetch")
+    public String content(Model model, @PathVariable("id") Long id) {
+        Optional<Board> board = boardService.findOne(id);
+        model.addAttribute("board", board.get());
+        return "view/fetch";
+    }
+
+    @PostMapping("{id}/fetch")
+    public String update(BoardForm form, @PathVariable("id") Long id) {
+        Optional<Board> board = boardService.findOne(id);
+        Board newBoard = new Board();
+        newBoard.setPassword(form.getPassword());
+        newBoard.setContent(form.getContent());
+        newBoard.setTitle(form.getTitle());
+        if (board.get().getPassword().equals(form.getPassword())) {
+            boardService.removing(board.get());
+            boardService.updating(newBoard, id);
+        }
+        return "redirect:/";
+    }
 }

@@ -44,4 +44,5 @@ public class BoardController {
         System.out.println("boards.size() = " + boards.size());
         return "boards/contents";
     }
+
 }

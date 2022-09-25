@@ -10,6 +10,8 @@ public interface BoardRepository {
 
     Board remove(Board board);
 
+    Board fetch(Board board, Long id);
+
     Optional<Board> findById(Long id);
 
     List<Board> findAll();
