@@ -10,8 +10,8 @@ public class BoardService {
 
     private BoardRepository boardRepository;
 
-    public BoardService(BoardRepository boardRepository){
-        this.boardRepository=boardRepository;
+    public BoardService(BoardRepository boardRepository) {
+        this.boardRepository = boardRepository;
     }
 
     public Long writing(Board board) {
@@ -19,11 +19,16 @@ public class BoardService {
         return board.getId();
     }
 
-    public List<Board> findBoards(){
+    public Long removing(Board board) {
+        boardRepository.remove(board);
+        return board.getId();
+    }
+
+    public List<Board> findBoards() {
         return boardRepository.findAll();
     }
 
-    public Optional<Board> findOne(Long memberId){
+    public Optional<Board> findOne(Long memberId) {
         return boardRepository.findById(memberId);
     }
 }

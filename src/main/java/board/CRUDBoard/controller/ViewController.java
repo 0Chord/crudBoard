@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Optional;
@@ -27,5 +28,14 @@ public class ViewController {
         Optional<Board> board = boardService.findOne(id);
         model.addAttribute("board", board.get());
         return "view/content";
+    }
+
+    @PostMapping("{id}/remove")
+    public String remove(BoardForm boardForm, @PathVariable("id") Long id) {
+        Optional<Board> board = boardService.findOne(id);
+        if (board.get().getPassword().equals(boardForm.getPassword())) {
+            boardService.removing(board.get());
+        }
+        return "redirect:/";
     }
 }

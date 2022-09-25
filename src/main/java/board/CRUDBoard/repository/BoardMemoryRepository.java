@@ -13,7 +13,12 @@ public class BoardMemoryRepository implements BoardRepository {
     public Board save(Board board) {
         board.setId(++sequence);
         store.put(board.getId(), board);
-        System.out.println(store);
+        return board;
+    }
+
+    @Override
+    public Board remove(Board board) {
+        store.remove(board.getId(), board);
         return board;
     }
 
