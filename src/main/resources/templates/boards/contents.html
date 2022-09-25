@@ -5,24 +5,24 @@
     <title>게시글 보기</title>
 </head>
 <body>
-    <div>
-        <table>
-            <thead>
-            <tr>
-                <th>게시글</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="board : ${boards}">
-                <td th:text="${board.id}"></td>
-                <td>
-                    <a th:text="${board.title}"></a>
-                    <a th:href="@{/view/{id} (id=${board.id})}">내용 보기</a>
-                </td>
+<div>
+    <table th:border="1" th:witdh="150px">
+        <thead>
+        <tr>
+            <th>게시글</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="board : ${boards}">
+            <td th:text="${board.id}"></td>
+            <td>
+                <a th:text="${board.title}"></a>
+                <a th:href="@{/view/{id} (id=${board.id})}">내용 보기</a>
+            </td>
 
-            </tr>
-            </tbody>
-        </table>
-    </div>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

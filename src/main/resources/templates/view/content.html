@@ -7,20 +7,24 @@
 <body>
 <div class="container">
     <div>
-        <table>
-            <thead>
-            <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>내용</th>
-            </tr>
-            </thead>
+        <table th:border="1" th:width="200px">
             <tbody>
-            <tr th:each="board : ${board}">
-                <td><span th:text="${board.id}"></span></td>
-                <td><span th:text="${board.title}"></span></td>
-                <td><span th:text="${board.content}"></span></td>
+            <tr>
+                <td>번호</td>
+                <td th:text="${board.id}" th:width="150px"></td>
+                <br>
             </tr>
+            <tr>
+                <td>제목</td>
+                <td th:text="${board.title}" th:width="150px"></td>
+                <br>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td th:text="${board.content}" th:cols="10" th:rows="50"></td>
+                <br>
+            </tr>
+
             </tbody>
         </table>
     </div>
