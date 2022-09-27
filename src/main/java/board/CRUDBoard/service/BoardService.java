@@ -2,10 +2,12 @@ package board.CRUDBoard.service;
 
 import board.CRUDBoard.board.Board;
 import board.CRUDBoard.repository.BoardRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class BoardService {
 
     private BoardRepository boardRepository;
