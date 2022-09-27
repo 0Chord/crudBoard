@@ -1,9 +1,27 @@
 package board.CRUDBoard.controller;
 
+import java.util.Date;
+
 public class BoardForm {
+    private String name;
     private String password;
     private String title;
     private String content;
+    private Date date;
+
+    public Date getDate() {
+        Date time = new Date();
+        return time;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getPassword() {
         return password;

@@ -10,19 +10,23 @@
         <thead>
         <tr>
             <th>게시글</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일자</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="board : ${boards}">
             <td th:text="${board.id}"></td>
             <td>
-                <a th:text="${board.title}"></a>
-                <a th:href="@{/view/{id} (id=${board.id})}">내용 보기</a>
+                <a th:text="${board.title}" th:href="@{/view/{id} (id=${board.id})}"></a>
             </td>
-
+            <td th:text="${board.name}"></td>
+            <td th:text="${#dates.format(board.date, 'yyyy-MM-dd HH:mm')}"></td>
         </tr>
         </tbody>
     </table>
+
 </div>
 </body>
 </html>

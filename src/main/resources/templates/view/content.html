@@ -10,17 +10,26 @@
         <table th:border="1" th:width="200px">
             <tbody>
             <tr>
-                <td>번호</td>
-                <td th:text="${board.id}" th:width="150px"></td>
+                <td th:width="30px">번호</td>
+                <td th:text="${board.id}" th:width="250px"></td>
                 <br>
             </tr>
             <tr>
-                <td>제목</td>
-                <td th:text="${board.title}" th:width="150px"></td>
+                <td th:width="100px">제목</td>
+                <td th:text="${board.title}" th:width="250px"></td>
                 <br>
             </tr>
             <tr>
-                <td>내용</td>
+                <td th:width="100px">작성자</td>
+                <td th:text="${board.name}" th:witdh="250px"></td>
+                <br>
+            </tr>
+            <tr>
+                <td th:width="100px">작성일</td>
+                <td th:text="${#dates.format(board.date, 'yyyy-MM-dd HH:mm')}" th:witdh="250px"></td>
+            </tr>
+            <tr>
+                <td th:width="100px">내용</td>
                 <td th:text="${board.content}" th:cols="10" th:rows="50"></td>
                 <br>
             </tr>

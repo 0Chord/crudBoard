@@ -33,6 +33,8 @@ public class BoardController {
         board.setPassword(form.getPassword());
         board.setContent(form.getContent());
         board.setTitle(form.getTitle());
+        board.setName(form.getName());
+        board.setDate(form.getDate());
         boardService.writing(board);
         return "redirect:/";
     }

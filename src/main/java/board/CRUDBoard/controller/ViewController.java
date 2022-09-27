@@ -50,9 +50,11 @@ public class ViewController {
     public String update(BoardForm form, @PathVariable("id") Long id) {
         Optional<Board> board = boardService.findOne(id);
         Board newBoard = new Board();
+        newBoard.setName(form.getName());
         newBoard.setPassword(form.getPassword());
         newBoard.setContent(form.getContent());
         newBoard.setTitle(form.getTitle());
+        newBoard.setDate(form.getDate());
         if (board.get().getPassword().equals(form.getPassword())) {
             boardService.removing(board.get());
             boardService.updating(newBoard, id);
